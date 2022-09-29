@@ -13,6 +13,7 @@ def duplicates(nums):
                 duplist.append(number)
         return duplist[0]
 
+
 def find_duplicate(nums):
     if len(nums) <= 1:
         return False

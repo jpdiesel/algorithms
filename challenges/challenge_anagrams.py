@@ -1,7 +1,7 @@
 # feito com o link a seguir:
 # https://www.geeksforgeeks.org/python-sorted-check-two-strings-anagram-not/
 
-def anagram(first_word, second_word):
+def check_anagram(first_word, second_word):
     # inicia o dicionário
     counts = {}
 
@@ -15,7 +15,9 @@ def anagram(first_word, second_word):
             counts[c2] -= 1
         else:
             counts[c2] = -1
+    return anagram(counts)
 
+def anagram(counts):
     # Percorre os valores do dicionário.
     # se o dicionário contém ao menos um valor
     # que é diferente de 0, a string não é um anagrama
@@ -23,6 +25,7 @@ def anagram(first_word, second_word):
         if count != 0:
             return False
     return True
+
 
 def is_anagram(first_string, second_string):
     first_word = first_string.lower()
@@ -32,4 +35,4 @@ def is_anagram(first_string, second_string):
     if len(first_word) != len(second_word):
         return False
 
-    return anagram(first_word, second_word)
+    return check_anagram(first_word, second_word)
