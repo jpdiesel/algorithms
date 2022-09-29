@@ -17,6 +17,7 @@ def check_anagram(first_word, second_word):
             counts[c2] = -1
     return anagram(counts)
 
+
 def anagram(counts):
     # Percorre os valores do dicionário.
     # se o dicionário contém ao menos um valor
