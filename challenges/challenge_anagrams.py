@@ -1,17 +1,10 @@
 # feito com o link a seguir:
 # https://www.geeksforgeeks.org/python-sorted-check-two-strings-anagram-not/
 
-def is_anagram(first_string, second_string):
-    first_word = first_string.lower()
-    second_word = second_string.lower()
-
-    # se o comprimento de duas frases não forem o mesmo, não são anagramas.
-    if len(first_word) != len(second_word):
-        return False
- 
+def anagram(first_word, second_word):
     # inicia o dicionário
     counts = {}
- 
+
     # percorre simultaneamente pelos caracteres das duas strings.
     for c1, c2 in zip(first_word, second_word):
         if c1 in counts.keys():
@@ -22,8 +15,6 @@ def is_anagram(first_string, second_string):
             counts[c2] -= 1
         else:
             counts[c2] = -1
-    
-    print(counts)
 
     # Percorre os valores do dicionário.
     # se o dicionário contém ao menos um valor
@@ -33,4 +24,12 @@ def is_anagram(first_string, second_string):
             return False
     return True
 
-print(is_anagram("pedra", "perda"))
+def is_anagram(first_string, second_string):
+    first_word = first_string.lower()
+    second_word = second_string.lower()
+
+    # se o comprimento de duas frases não forem o mesmo, não são anagramas.
+    if len(first_word) != len(second_word):
+        return False
+
+    return anagram(first_word, second_word)

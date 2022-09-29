@@ -1,11 +1,4 @@
-def find_duplicate(nums):
-    if len(nums) <= 1:
-        return False
-
-    for number in nums:
-        if type(number) is not int or number < 0:
-            return False 
-
+def duplicates(nums):
     seted_nums = set(nums)
     newlist = []
     duplist = []
@@ -19,3 +12,13 @@ def find_duplicate(nums):
             else:
                 duplist.append(number)
         return duplist[0]
+
+def find_duplicate(nums):
+    if len(nums) <= 1:
+        return False
+
+    for number in nums:
+        if type(number) is not int or number < 0:
+            return False
+
+    return duplicates(nums)
