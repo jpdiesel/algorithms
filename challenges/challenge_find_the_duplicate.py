@@ -1,17 +1,4 @@
-def duplicates(nums):
-    seted_nums = set(nums)
-    newlist = []
-    duplist = []
-
-    if len(seted_nums) == len(nums):
-        return False
-    else:
-        for number in nums:
-            if number not in newlist:
-                newlist.append(number)
-            else:
-                duplist.append(number)
-        return duplist[0]
+from collections import Counter
 
 
 def find_duplicate(nums):
@@ -22,4 +9,13 @@ def find_duplicate(nums):
         if type(number) is not int or number < 0:
             return False
 
-    return duplicates(nums)
+    repeated_values = Counter(nums)
+    result = [number for number, value in repeated_values.items() if value > 1]
+
+    if result == []:
+        return False
+    else:
+        return result[0]
+
+# feito a partir do link:
+# https://stackoverflow.com/questions/52072381/how-to-print-only-the-duplicate-elements-in-python-list
